@@ -40,6 +40,18 @@
         }
 
         .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+            margin-right: 0.5rem;
+        }
+
+        .nav-logo-text {
             font-size: 1.5rem;
             font-weight: 700;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -163,21 +175,25 @@
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
 
-        /* About Us Section */
-        .about-section {
+            color: #b8b8b8;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
             padding: 5rem 2rem;
-            background: #1a1a1a;
+            background: #0f0f0f;
             position: relative;
             z-index: 3;
         }
 
-        .about-container {
-            max-width: 1000px;
+        .contact-container {
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .about-title {
+        .contact-title {
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 2rem;
@@ -187,38 +203,98 @@
             background-clip: text;
         }
 
-        .about-content {
+        .contact-text {
             font-size: 1.2rem;
-            line-height: 1.8;
             color: #b8b8b8;
             margin-bottom: 3rem;
+            line-height: 1.6;
         }
 
-        .about-features {
+        .contact-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: #000000;
+            padding: 3rem 2rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 3rem;
+            margin-bottom: 2rem;
         }
 
-        .feature-item {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .feature-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+        .footer-section h3 {
             color: white;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .feature-description {
+        .footer-section p, .footer-section a {
             color: #b8b8b8;
+            text-decoration: none;
             line-height: 1.6;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img {
+            height: 30px;
+            width: auto;
+            margin-right: 0.5rem;
+        }
+
+        .footer-logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .neural-network {
@@ -247,6 +323,16 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .hero-title img {
+            height: 80px;
+            width: auto;
+            filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.3));
         }
 
         .hero-subtitle {
@@ -320,17 +406,28 @@
             .about-features {
                 grid-template-columns: 1fr;
             }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-title {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">Imperial AI</div>
+            <a href="#home" class="nav-logo">
+                <img src="assets/logo.png" alt="Imperial AI Logo">
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -339,7 +436,9 @@
     <section class="hero-section" id="home">
         <svg class="neural-network"></svg>
         <div class="hero-content">
-            <h1 class="hero-title">Imperial AI</h1>
+            <h1 class="hero-title">
+                <img src="assets/logo.png" alt="Imperial AI Logo">
+            </h1>
             <p class="hero-subtitle">Helping Businesses Maximize Growth and Cost Savings with AI-Powered Tools</p>
             <button class="hero-button">Get Started</button>
         </div>
@@ -352,11 +451,38 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/commodities.webp" alt="Gaia AI Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <img src="assets/commodities.webp" alt="Commodities Trading Platform" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
                     </div>
-                    <h3 class="project-title">Gaia AI</h3>
-                    <p class="project-description">Our Commodities Metals and Concentrates Contract Operations Platform designed with efficiency and accuracy in mind to transform your operations.</p>
-                    <a href="holly.html" class="project-button">Learn More</a>
+                    <h3 class="project-title">Commodities Trading</h3>
+                    <p class="project-description">Transform commodities trading with AI-powered contract intelligence. Query quality specs, delivery clauses, or price terms from contracts through natural conversation.</p>
+                    <a href="commodities.html" class="project-button">Learn More</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/githubme.webp" alt="GitHub Me Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="project-title">GitHub Me</h3>
+                    <p class="project-description">Understand any codebase instantly. Save time and quickly learn how any GitHub Repo works—browse structure and chat with AI to explore code effortlessly.</p>
+                    <a href="githubme.html" class="project-button">Learn More</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/read10k.webp" alt="ReadA10K Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="project-title">ReadA10K</h3>
+                    <p class="project-description">Skip the reading, keep the insights. Transform SEC filings into investment insights through AI-powered analysis of 10-K reports.</p>
+                    <a href="reada10k.html" class="project-button">Learn More</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/athena.webp" alt="Athena Platform" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    </div>
+                    <h3 class="project-title">Athena</h3>
+                    <p class="project-description">Commodities Metals and Concentrates Contract Operations Platform designed to streamline operations, save time, reduce costs, and minimize errors.</p>
+                    <a href="athena.html" class="project-button">Learn More</a>
                 </div>
 
                 <div class="project-card">
@@ -364,59 +490,73 @@
                         <img src="assets/themis.webp" alt="Themis Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
                     </div>
                     <h3 class="project-title">Themis</h3>
-                    <p class="project-description">AI-Powered Legal Document Simplification for lawyers that transforms lengthy legal documents into concise, relevant summaries.</p>
-                    <a href="githubme.html" class="project-button">Learn More</a>
+                    <p class="project-description">AI-Powered Legal Document Simplification for lawyers that transforms lengthy legal documents into digestible, easy-to-read summaries.</p>
+                    <a href="themis.html" class="project-button">Learn More</a>
                 </div>
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/read10k.webp" alt="CV Reader Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <img src="assets/aidraw.webp" alt="AI Draw Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
                     </div>
-                    <h3 class="project-title">CV Reader</h3>
-                    <p class="project-description">AI-Powered CV Reader that simplifies candidate comparison by extracting information and converting it into organized spreadsheets.</p>
+                    <h3 class="project-title">AI Draw</h3>
+                    <p class="project-description">A pioneering platform dedicated to transforming ordinary photos into extraordinary artwork using AI technology, mainly focusing on turning your dog into art.</p>
                     <a href="aidraw.html" class="project-button">Learn More</a>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/athena.webp" alt="Expense Management Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2 class="contact-title">Get In Touch</h2>
+            <p class="contact-text">Ready to transform your business with AI? We'd love to hear from you. Contact us to discuss how our AI-powered solutions can help maximize your growth and reduce costs.</p>
+            <a href="contact.html" class="contact-button">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/logo.png" alt="Imperial AI Logo">
+                        <span class="footer-logo-text">Imperial AI</span>
                     </div>
-                    <h3 class="project-title">Expense Management</h3>
-                    <p class="project-description">AI-Powered Expense Management System that streamlines expense tracking with automated invoice processing and data extraction.</p>
-                    <a href="athena.html" class="project-button">Learn More</a>
+                    <p>Helping businesses maximize growth and cost savings with AI-powered tools. Transforming the future of business automation.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section class="about-section" id="about">
-        <div class="about-container">
-            <h2 class="about-title">About Us</h2>
-            <div class="about-content">
-                <p>We are pioneers in artificial intelligence and neural network technology, dedicated to creating innovative solutions that bridge the gap between human creativity and machine intelligence. Our team combines cutting-edge research with practical applications to deliver transformative digital experiences.</p>
                 
-                <p>Founded on the principles of innovation, collaboration, and excellence, we specialize in developing AI-powered applications that enhance productivity, creativity, and human potential. From intelligent assistants to creative tools, our projects represent the future of human-computer interaction.</p>
+                <div class="footer-section">
+                    <h3>Our Products</h3>
+                    <a href="commodities.html">Commodities Trading</a>
+                    <a href="githubme.html">GitHub Me</a>
+                    <a href="reada10k.html">ReadA10K</a>
+                    <a href="athena.html">Athena</a>
+                    <a href="themis.html">Themis</a>
+                    <a href="aidraw.html">AI Draw</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="about.html">About Us</a>
+                    <a href="#projects">Projects</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <p>Ready to get started?</p>
+                    <a href="contact.html">Get in touch with our team</a>
+                </div>
             </div>
-
-            <div class="about-features">
-                <div class="feature-item">
-                    <h3 class="feature-title">Business AI Solutions</h3>
-                    <p class="feature-description">Developing intelligent systems that automate complex business processes, from contract analysis to document processing.</p>
-                </div>
-
-                <div class="feature-item">
-                    <h3 class="feature-title">Cost Optimization</h3>
-                    <p class="feature-description">Creating AI tools that help businesses reduce operational costs while improving efficiency and accuracy.</p>
-                </div>
-
-                <div class="feature-item">
-                    <h3 class="feature-title">Industry Expertise</h3>
-                    <p class="feature-description">Specialized solutions for legal, financial, HR, and commodities sectors with deep domain knowledge and understanding.</p>
-                </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Imperial AI. All rights reserved. Developed by the Team at Imperial AI.</p>
             </div>
         </div>
-    </section>
+    </footer>
 
     <script>
         // Neural Network Animation
