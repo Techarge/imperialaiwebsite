@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Me - Portfolio Platform | Neural Intelligence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #b8b8b8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .project-hero {
+            padding: 120px 2rem 80px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+
+        .project-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-subtitle {
+            font-size: 1.5rem;
+            color: #b8b8b8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .project-content {
+            padding: 80px 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #667eea;
+        }
+
+        .section-text {
+            font-size: 1.2rem;
+            color: #b8b8b8;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="neural-network-hero.html" class="nav-logo">Neural AI</a>
+            <ul class="nav-links">
+                <li><a href="neural-network-hero.html#home">Home</a></li>
+                <li><a href="neural-network-hero.html#about">About</a></li>
+                <li><a href="neural-network-hero.html#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <h1 class="project-title">GitHub Me</h1>
+        <p class="project-subtitle">A comprehensive portfolio platform that showcases your coding journey, repositories, and development achievements in an elegant interface</p>
+    </section>
+
+    <div class="project-content">
+        <div class="section">
+            <h2 class="section-title">Overview</h2>
+            <p class="section-text">GitHub Me transforms your GitHub profile into a stunning, interactive portfolio that tells your coding story. By analyzing your repositories, contributions, and coding patterns, it creates a comprehensive showcase of your development journey and technical expertise.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">Repository Analytics</h3>
+                    <p>Deep analysis of your repositories with language statistics, contribution patterns, and project complexity metrics.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Interactive Timeline</h3>
+                    <p>Visualize your coding journey with an interactive timeline of commits, projects, and milestones.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Skill Assessment</h3>
+                    <p>Automatically identifies and rates your programming skills based on your code contributions and project diversity.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Beautiful Visualizations</h3>
+                    <p>Stunning charts and graphs that make your coding statistics engaging and easy to understand.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Technology</h2>
+            <p class="section-text">Built using modern web technologies and GitHub's API, GitHub Me employs data visualization libraries and machine learning algorithms to analyze and present your coding profile in the most compelling way possible.</p>
+        </div>
+
+        <a href="neural-network-hero.html" class="back-button">← Back to Projects</a>
+    </div>
+</body>
+</html>

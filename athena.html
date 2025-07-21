@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athena - Knowledge Management | Neural Intelligence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #b8b8b8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .project-hero {
+            padding: 120px 2rem 80px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+
+        .project-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-subtitle {
+            font-size: 1.5rem;
+            color: #b8b8b8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .project-content {
+            padding: 80px 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #667eea;
+        }
+
+        .section-text {
+            font-size: 1.2rem;
+            color: #b8b8b8;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="neural-network-hero.html" class="nav-logo">Neural AI</a>
+            <ul class="nav-links">
+                <li><a href="neural-network-hero.html#home">Home</a></li>
+                <li><a href="neural-network-hero.html#about">About</a></li>
+                <li><a href="neural-network-hero.html#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <h1 class="project-title">Athena</h1>
+        <p class="project-subtitle">A powerful knowledge management system that organizes, analyzes, and retrieves information using cutting-edge AI technology</p>
+    </section>
+
+    <div class="project-content">
+        <div class="section">
+            <h2 class="section-title">Overview</h2>
+            <p class="section-text">Named after the goddess of wisdom, Athena is an advanced knowledge management platform that transforms how organizations capture, organize, and access information. Using sophisticated AI algorithms, Athena creates intelligent connections between data points, making knowledge discovery intuitive and efficient.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">Intelligent Indexing</h3>
+                    <p>Automatically categorizes and tags content using natural language understanding and semantic analysis.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Knowledge Graphs</h3>
+                    <p>Creates visual maps of information relationships, revealing hidden connections and insights across your data.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Smart Search</h3>
+                    <p>Advanced search capabilities that understand context and intent, delivering precise results even with vague queries.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Collaborative Intelligence</h3>
+                    <p>Enables teams to share knowledge seamlessly with AI-powered recommendations and expertise discovery.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Technology</h2>
+            <p class="section-text">Athena leverages advanced natural language processing, graph neural networks, and knowledge representation techniques to create a comprehensive understanding of your organization's intellectual assets. The system continuously learns and improves its knowledge organization capabilities.</p>
+        </div>
+
+        <a href="neural-network-hero.html" class="back-button">← Back to Projects</a>
+    </div>
+</body>
+</html>
