@@ -231,11 +231,17 @@
                 const nodeCount = Math.max(15, Math.floor((this.width * this.height) / 12000)); // Reduced nodes and increased divisor
                 console.log('Creating', nodeCount, 'nodes');
                 
+                // Extended bounds to include off-screen areas
+                const extendedWidth = this.width + 400; // 200px on each side
+                const extendedHeight = this.height + 400; // 200px on top and bottom
+                const offsetX = -200;
+                const offsetY = -200;
+                
                 for (let i = 0; i < nodeCount; i++) {
                     this.nodes.push({
                         id: i,
-                        x: Math.random() * this.width,
-                        y: Math.random() * this.height,
+                        x: Math.random() * extendedWidth + offsetX,
+                        y: Math.random() * extendedHeight + offsetY,
                         originalX: 0,
                         originalY: 0,
                         vx: (Math.random() - 0.5) * 1.2,
@@ -272,7 +278,7 @@
                     
                     // Sort by distance and connect to closest nodes
                     distances.sort((a, b) => a.distance - b.distance);
-                    const connectionsPerNode = Math.min(5, distances.length); // More connections
+                    const connectionsPerNode = Math.min(3, distances.length); // Only 3 connections per node
                     
                     for (let k = 0; k < connectionsPerNode; k++) {
                         const targetIndex = distances[k].index;
@@ -311,7 +317,7 @@
                     .attr('x2', d => d.target.x)
                     .attr('y2', d => d.target.y)
                     .attr('opacity', d => d.opacity)
-                    .style('stroke', 'rgba(102, 126, 234, 0.5)')
+                    .style('stroke', 'rgba(255, 255, 255, 0.5)') // Changed to white
                     .style('stroke-width', '3px');
 
                 // Render nodes on top
@@ -348,11 +354,12 @@
                     node.vx += Math.sin(node.angle * 0.5) * 0.005;
                     node.vy += Math.cos(node.angle * 0.3) * 0.005;
 
-                    // Boundary wrapping
-                    if (node.x < -10) node.x = this.width + 10;
-                    if (node.x > this.width + 10) node.x = -10;
-                    if (node.y < -10) node.y = this.height + 10;
-                    if (node.y > this.height + 10) node.y = -10;
+                    // Boundary wrapping with extended bounds
+                    const extendedBoundary = 200;
+                    if (node.x < -extendedBoundary) node.x = this.width + extendedBoundary;
+                    if (node.x > this.width + extendedBoundary) node.x = -extendedBoundary;
+                    if (node.y < -extendedBoundary) node.y = this.height + extendedBoundary;
+                    if (node.y > this.height + extendedBoundary) node.y = -extendedBoundary;
 
                     // Mouse repulsion
                     const distanceToMouse = Math.sqrt(
