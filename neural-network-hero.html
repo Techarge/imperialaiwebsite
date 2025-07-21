@@ -19,6 +19,52 @@
             overflow-x: hidden;
         }
 
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #b8b8b8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
         .hero-section {
             position: relative;
             height: 100vh;
@@ -26,6 +72,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            padding-top: 80px;
         }
 
         .neural-network {
@@ -102,10 +149,35 @@
             .hero-subtitle {
                 font-size: 1.2rem;
             }
+
+            .navbar {
+                padding: 1rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Neural AI</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <section class="hero-section">
         <svg class="neural-network"></svg>
         <div class="hero-content">
@@ -156,7 +228,7 @@
             }
 
             createNodes() {
-                const nodeCount = Math.max(20, Math.floor((this.width * this.height) / 8000)); // Ensure minimum nodes
+                const nodeCount = Math.max(15, Math.floor((this.width * this.height) / 12000)); // Reduced nodes and increased divisor
                 console.log('Creating', nodeCount, 'nodes');
                 
                 for (let i = 0; i < nodeCount; i++) {
@@ -168,7 +240,7 @@
                         originalY: 0,
                         vx: (Math.random() - 0.5) * 1.2,
                         vy: (Math.random() - 0.5) * 1.2,
-                        radius: Math.random() * 6 + 5, // Much thicker nodes (5-11px)
+                        radius: Math.random() * 3 + 2, // Much smaller nodes (2-5px)
                         opacity: Math.random() * 0.4 + 0.6, // Higher opacity
                         angle: Math.random() * Math.PI * 2,
                         rotationSpeed: (Math.random() - 0.5) * 0.02,
