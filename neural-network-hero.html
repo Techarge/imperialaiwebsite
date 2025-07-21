@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network Hero</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .neural-network {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #b8b8b8;
+            line-height: 1.6;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .node {
+            fill: rgba(255, 255, 255, 0.9);
+            stroke: rgba(255, 255, 255, 0.6);
+            stroke-width: 2;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+        }
+
+        .connection {
+            stroke: rgba(255, 255, 255, 0.5);
+            stroke-width: 4;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <svg class="neural-network"></svg>
+        <div class="hero-content">
+            <h1 class="hero-title">Neural Intelligence</h1>
+            <p class="hero-subtitle">Experience the future of AI-powered solutions with our cutting-edge neural network technology</p>
+            <button class="hero-button">Get Started</button>
+        </div>
+    </section>
+
+    <script>
+        // Neural Network Animation
+        class NeuralNetwork {
+            constructor() {
+                this.width = window.innerWidth;
+                this.height = window.innerHeight;
+                this.nodes = [];
+                this.connections = [];
+                this.mouseX = 0;
+                this.mouseY = 0;
+                this.repelRadius = 150;
+                this.repelStrength = 0.8;
+                
+                this.init();
+                this.setupEventListeners();
+                this.animate();
+            }
+
+            init() {
+                console.log('Initializing neural network with dimensions:', this.width, 'x', this.height);
+                
+                // Create SVG
+                this.svg = d3.select('.neural-network')
+                    .attr('width', this.width)
+                    .attr('height', this.height);
+
+                console.log('SVG created:', this.svg.node());
+
+                // Create node data
+                this.createNodes();
+                console.log('Created', this.nodes.length, 'nodes');
+                
+                this.createConnections();
+                console.log('Created', this.connections.length, 'connections');
+                
+                // Render initial state
+                this.render();
+                console.log('Initial render complete');
+            }
+
+            createNodes() {
+                const nodeCount = Math.max(20, Math.floor((this.width * this.height) / 8000)); // Ensure minimum nodes
+                console.log('Creating', nodeCount, 'nodes');
+                
+                for (let i = 0; i < nodeCount; i++) {
+                    this.nodes.push({
+                        id: i,
+                        x: Math.random() * this.width,
+                        y: Math.random() * this.height,
+                        originalX: 0,
+                        originalY: 0,
+                        vx: (Math.random() - 0.5) * 1.2,
+                        vy: (Math.random() - 0.5) * 1.2,
+                        radius: Math.random() * 6 + 5, // Much thicker nodes (5-11px)
+                        opacity: Math.random() * 0.4 + 0.6, // Higher opacity
+                        angle: Math.random() * Math.PI * 2,
+                        rotationSpeed: (Math.random() - 0.5) * 0.02,
+                        orbitRadius: Math.random() * 30 + 20,
+                        orbitSpeed: (Math.random() - 0.5) * 0.01
+                    });
+                }
+
+                // Set original positions
+                this.nodes.forEach(node => {
+                    node.originalX = node.x;
+                    node.originalY = node.y;
+                });
+            }
+
+            createConnections() {
+                const maxDistance = 180; // Increased connection distance
+                
+                // Connect each node to its nearest neighbors
+                for (let i = 0; i < this.nodes.length; i++) {
+                    const distances = [];
+                    
+                    for (let j = 0; j < this.nodes.length; j++) {
+                        if (i !== j) {
+                            const distance = this.getDistance(this.nodes[i], this.nodes[j]);
+                            distances.push({ index: j, distance: distance });
+                        }
+                    }
+                    
+                    // Sort by distance and connect to closest nodes
+                    distances.sort((a, b) => a.distance - b.distance);
+                    const connectionsPerNode = Math.min(5, distances.length); // More connections
+                    
+                    for (let k = 0; k < connectionsPerNode; k++) {
+                        const targetIndex = distances[k].index;
+                        const distance = distances[k].distance;
+                        
+                        if (distance < maxDistance) {
+                            // Check if connection already exists
+                            const exists = this.connections.some(conn => 
+                                (conn.source.id === i && conn.target.id === targetIndex) ||
+                                (conn.source.id === targetIndex && conn.target.id === i)
+                            );
+                            
+                            if (!exists) {
+                                this.connections.push({
+                                    source: this.nodes[i],
+                                    target: this.nodes[targetIndex],
+                                    opacity: (maxDistance - distance) / maxDistance * 0.6 // Higher opacity
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+
+            render() {
+                // Render connections first (behind nodes)
+                const lines = this.svg.selectAll('.connection')
+                    .data(this.connections);
+
+                lines.enter()
+                    .append('line')
+                    .attr('class', 'connection')
+                    .merge(lines)
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y)
+                    .attr('opacity', d => d.opacity)
+                    .style('stroke', 'rgba(102, 126, 234, 0.5)')
+                    .style('stroke-width', '3px');
+
+                // Render nodes on top
+                const circles = this.svg.selectAll('.node')
+                    .data(this.nodes);
+
+                circles.enter()
+                    .append('circle')
+                    .attr('class', 'node')
+                    .merge(circles)
+                    .attr('cx', d => d.x)
+                    .attr('cy', d => d.y)
+                    .attr('r', d => d.radius)
+                    .attr('opacity', d => d.opacity)
+                    .style('fill', 'rgba(255, 255, 255, 0.9)')
+                    .style('stroke', 'rgba(255, 255, 255, 0.6)')
+                    .style('stroke-width', '2px');
+            }
+
+            updateNodes() {
+                this.nodes.forEach(node => {
+                    // Update rotation angle
+                    node.angle += node.rotationSpeed;
+                    
+                    // Orbital movement
+                    const orbitX = Math.cos(node.angle) * node.orbitRadius * 0.3;
+                    const orbitY = Math.sin(node.angle) * node.orbitRadius * 0.3;
+                    
+                    // Natural movement with orbital influence
+                    node.x += node.vx + orbitX * 0.01;
+                    node.y += node.vy + orbitY * 0.01;
+
+                    // Add continuous subtle movement
+                    node.vx += Math.sin(node.angle * 0.5) * 0.005;
+                    node.vy += Math.cos(node.angle * 0.3) * 0.005;
+
+                    // Boundary wrapping
+                    if (node.x < -10) node.x = this.width + 10;
+                    if (node.x > this.width + 10) node.x = -10;
+                    if (node.y < -10) node.y = this.height + 10;
+                    if (node.y > this.height + 10) node.y = -10;
+
+                    // Mouse repulsion
+                    const distanceToMouse = Math.sqrt(
+                        Math.pow(node.x - this.mouseX, 2) + 
+                        Math.pow(node.y - this.mouseY, 2)
+                    );
+
+                    if (distanceToMouse < this.repelRadius) {
+                        const angle = Math.atan2(node.y - this.mouseY, node.x - this.mouseX);
+                        const force = (this.repelRadius - distanceToMouse) / this.repelRadius * this.repelStrength;
+                        
+                        node.vx += Math.cos(angle) * force;
+                        node.vy += Math.sin(angle) * force;
+                        
+                        // Increase rotation when repelled
+                        node.rotationSpeed += (Math.random() - 0.5) * 0.01;
+                    }
+
+                    // Gentle damping
+                    node.vx *= 0.995;
+                    node.vy *= 0.995;
+                    
+                    // Normalize rotation speed
+                    node.rotationSpeed *= 0.98;
+                    if (Math.abs(node.rotationSpeed) < 0.005) {
+                        node.rotationSpeed = (Math.random() - 0.5) * 0.01;
+                    }
+
+                    // Add some randomness
+                    node.vx += (Math.random() - 0.5) * 0.02;
+                    node.vy += (Math.random() - 0.5) * 0.02;
+
+                    // Limit velocity
+                    const maxVel = 3;
+                    const vel = Math.sqrt(node.vx * node.vx + node.vy * node.vy);
+                    if (vel > maxVel) {
+                        node.vx = (node.vx / vel) * maxVel;
+                        node.vy = (node.vy / vel) * maxVel;
+                    }
+
+                    // Pulsing opacity with higher base values
+                    node.opacity = 0.6 + Math.sin(node.angle * 2) * 0.2 + 0.2;
+                });
+            }
+
+            updateConnections() {
+                const maxDistance = 180;
+                
+                this.connections.forEach(connection => {
+                    const distance = this.getDistance(connection.source, connection.target);
+                    const baseOpacity = distance < maxDistance ? 
+                        (maxDistance - distance) / maxDistance * 0.6 : 0; // Higher base opacity
+                    
+                    // Add pulsing effect to connections
+                    const pulse = Math.sin(Date.now() * 0.001 + connection.source.id * 0.1) * 0.15;
+                    connection.opacity = Math.max(0.1, baseOpacity + pulse); // Minimum opacity of 0.1
+                });
+            }
+
+            getDistance(node1, node2) {
+                return Math.sqrt(
+                    Math.pow(node1.x - node2.x, 2) + 
+                    Math.pow(node1.y - node2.y, 2)
+                );
+            }
+
+            animate() {
+                this.updateNodes();
+                this.updateConnections();
+                this.render();
+                requestAnimationFrame(() => this.animate());
+            }
+
+            setupEventListeners() {
+                // Mouse movement
+                document.addEventListener('mousemove', (e) => {
+                    this.mouseX = e.clientX;
+                    this.mouseY = e.clientY;
+                });
+
+                // Window resize
+                window.addEventListener('resize', () => {
+                    this.width = window.innerWidth;
+                    this.height = window.innerHeight;
+                    
+                    this.svg
+                        .attr('width', this.width)
+                        .attr('height', this.height);
+                });
+            }
+        }
+
+        // Initialize the neural network when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM loaded, initializing neural network...');
+            new NeuralNetwork();
+        });
+
+        // Backup initialization in case DOMContentLoaded already fired
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('DOM loaded, initializing neural network...');
+                new NeuralNetwork();
+            });
+        } else {
+            console.log('DOM already loaded, initializing neural network immediately...');
+            new NeuralNetwork();
+        }
+    </script>
+</body>
+</html>
