@@ -79,7 +79,7 @@
 
         .hero-section {
             position: relative;
-            height: 100vh;
+            height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -96,7 +96,7 @@
         }
 
         .projects-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -112,67 +112,138 @@
         }
 
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.05);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
+            border-radius: 20px;
+            padding: 3rem;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
 
         .project-card:hover {
-            transform: scale(1.1);
+            transform: translateY(-5px);
             border-color: #667eea;
-            box-shadow: 0 0 30px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .project-card.reverse {
+            direction: rtl;
+        }
+
+        .project-card.reverse > * {
+            direction: ltr;
         }
 
         .project-image {
             width: 100%;
-            height: 200px;
+            height: 300px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            margin-bottom: 1.5rem;
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
-            font-size: 1rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 1rem 0;
         }
 
         .project-title {
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 2.2rem;
+            font-weight: 700;
             margin-bottom: 1rem;
             color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .project-description {
             color: #b8b8b8;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .project-stat {
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #b8b8b8;
+            margin-top: 0.25rem;
         }
 
         .project-button {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 30px;
             font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .project-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .project-button::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+
+        .project-button:hover::after {
+            transform: translateX(5px);
         }
 
             color: #b8b8b8;
@@ -395,12 +466,37 @@
                 gap: 1.5rem;
             }
 
-            .projects-title, .about-title {
-                font-size: 2.5rem;
+            .projects-grid {
+                gap: 2rem;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .project-card {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto auto;
+                gap: 2rem;
+                padding: 2rem;
+                text-align: center;
+            }
+
+            .project-card.reverse {
+                direction: ltr !important;
+            }
+
+            .project-card .project-image {
+                order: 1;
+                height: 250px;
+            }
+
+            .project-card .project-content {
+                order: 2;
+            }
+
+            .project-title {
+                font-size: 1.8rem;
+            }
+
+            .project-stats {
+                justify-content: center;
             }
 
             .about-features {
@@ -414,6 +510,53 @@
 
             .contact-title {
                 font-size: 2.5rem;
+            }
+        }
+
+        /* Tablet screens: Stack layout with image on top */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .project-card {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto auto;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .project-card.reverse {
+                direction: ltr !important;
+            }
+
+            .project-card .project-image {
+                order: 1;
+                height: 280px;
+            }
+
+            .project-card .project-content {
+                order: 2;
+            }
+
+            .project-stats {
+                justify-content: center;
+            }
+        }
+
+        /* Large tablets/small desktop: Keep side-by-side */
+        @media (min-width: 1025px) and (max-width: 1400px) {
+            .project-card {
+                gap: 2.5rem;
+                padding: 2.5rem;
+            }
+
+            .project-image {
+                height: 280px;
+            }
+        }
+        }
+
+        /* Large tablets/small desktop: 3 columns */
+        @media (min-width: 1025px) and (max-width: 1400px) {
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
@@ -449,58 +592,114 @@
         <div class="projects-container">
             <h2 class="projects-title">Our Projects</h2>
             <div class="projects-grid">
+                <!-- Project 1: Commodities Trading -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/commodities.webp" alt="Commodities Trading Platform" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <img src="assets/commodities.webp" alt="Commodities Trading Platform">
                     </div>
-                    <h3 class="project-title">Commodities Trading</h3>
-                    <p class="project-description">Transform commodities trading with AI-powered contract intelligence. Query quality specs, delivery clauses, or price terms from contracts through natural conversation.</p>
-                    <a href="commodities.html" class="project-button">Learn More</a>
+                    <div class="project-content">
+                        <h3 class="project-title">Commodities Trading</h3>
+                        <p class="project-description">Transform commodities trading with AI-powered contract intelligence. Query quality specs, delivery clauses, or price terms from contracts through natural conversation. Our AI processes multiple email strings and filters the most recent relevant information.</p>
+                        <a href="commodities.html" class="project-button">Learn More</a>
+                    </div>
                 </div>
 
-                <div class="project-card">
+                <!-- Project 2: GitHub Me (Reversed) -->
+                <div class="project-card reverse">
                     <div class="project-image">
-                        <img src="assets/githubme.webp" alt="GitHub Me Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <img src="assets/githubme.webp" alt="GitHub Me Project">
                     </div>
-                    <h3 class="project-title">GitHub Me</h3>
-                    <p class="project-description">Understand any codebase instantly. Save time and quickly learn how any GitHub Repo works—browse structure and chat with AI to explore code effortlessly.</p>
-                    <a href="githubme.html" class="project-button">Learn More</a>
+                    <div class="project-content">
+                        <h3 class="project-title">GitHub Me</h3>
+                        <p class="project-description">Understand any codebase instantly. Save time and quickly learn how any GitHub Repo works—browse structure, see what it's built with, and chat with AI to explore code effortlessly. Perfect for developers and teams.</p>
+                        <a href="githubme.html" class="project-button">Learn More</a>
+                    </div>
                 </div>
 
+                <!-- Project 3: ReadA10K -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/read10k.webp" alt="ReadA10K Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <img src="assets/read10k.webp" alt="ReadA10K Project">
                     </div>
-                    <h3 class="project-title">ReadA10K</h3>
-                    <p class="project-description">Skip the reading, keep the insights. Transform SEC filings into investment insights through AI-powered analysis of 10-K reports.</p>
-                    <a href="reada10k.html" class="project-button">Learn More</a>
+                    <div class="project-content">
+                        <h3 class="project-title">ReadA10K</h3>
+                        <p class="project-description">Skip the reading, keep the insights. Transform SEC filings into investment insights through AI-powered analysis of 10-K reports. Help investors quickly understand company fundamentals and make better decisions.</p>
+                        <a href="reada10k.html" class="project-button">Learn More</a>
+                    </div>
                 </div>
 
-                <div class="project-card">
+                <!-- Project 4: Athena (Reversed) -->
+                <div class="project-card reverse">
                     <div class="project-image">
-                        <img src="assets/athena.webp" alt="Athena Platform" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <img src="assets/athena.webp" alt="Athena Platform">
                     </div>
-                    <h3 class="project-title">Athena</h3>
-                    <p class="project-description">Commodities Metals and Concentrates Contract Operations Platform designed to streamline operations, save time, reduce costs, and minimize errors.</p>
-                    <a href="athena.html" class="project-button">Learn More</a>
+                    <div class="project-content">
+                        <h3 class="project-title">Athena</h3>
+                        <p class="project-description">Commodities Metals and Concentrates Contract Operations Platform designed to streamline operations, save time, reduce costs, and minimize errors. Build workflows and pricing spreadsheets with precision.</p>
+                        <a href="athena.html" class="project-button">Learn More</a>
+                    </div>
                 </div>
 
+                <!-- Project 5: Themis -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/themis.webp" alt="Themis Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <img src="assets/themis.webp" alt="Themis Project">
                     </div>
-                    <h3 class="project-title">Themis</h3>
-                    <p class="project-description">AI-Powered Legal Document Simplification for lawyers that transforms lengthy legal documents into digestible, easy-to-read summaries.</p>
-                    <a href="themis.html" class="project-button">Learn More</a>
+                    <div class="project-content">
+                        <h3 class="project-title">Themis</h3>
+                        <p class="project-description">AI-Powered Legal Document Simplification for lawyers that transforms lengthy legal documents into digestible, easy-to-read summaries. Streamline your legal review process and focus on what matters most.</p>
+                        <a href="themis.html" class="project-button">Learn More</a>
+                    </div>
                 </div>
 
+                <!-- Project 6: AI Draw (Reversed) -->
+                <div class="project-card reverse">
+                    <div class="project-image">
+                        <img src="assets/aidraw.webp" alt="AI Draw Project">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI Draw</h3>
+                        <p class="project-description">A pioneering platform dedicated to transforming ordinary photos into extraordinary artwork using AI technology. Mainly focuses on turning your dog photos into stunning artistic masterpieces.</p>
+                        <a href="aidraw.html" class="project-button">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Project 7: CV Reader -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/aidraw.webp" alt="AI Draw Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <img src="assets/read10k.webp" alt="CV Reader Project">
                     </div>
-                    <h3 class="project-title">AI Draw</h3>
-                    <p class="project-description">A pioneering platform dedicated to transforming ordinary photos into extraordinary artwork using AI technology, mainly focusing on turning your dog into art.</p>
-                    <a href="aidraw.html" class="project-button">Learn More</a>
+                    <div class="project-content">
+                        <h3 class="project-title">CV Reader</h3>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span class="stat-number">300</span>
+                                <span class="stat-label">CVs/month</span>
+                            </div>
+                            <div class="project-stat">
+                                <span class="stat-number">15hrs</span>
+                                <span class="stat-label">time saved</span>
+                            </div>
+                            <div class="project-stat">
+                                <span class="stat-number">£350</span>
+                                <span class="stat-label">cost savings</span>
+                            </div>
+                        </div>
+                        <p class="project-description">AI-Powered CV Reader that simplifies candidate comparison. Analyses 300 CVs a month, saving companies 15 hours and £350 for recruiting businesses through intelligent parsing and spreadsheet conversion.</p>
+                        <a href="cvreader.html" class="project-button">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Project 8: Expense Management (Reversed) -->
+                <div class="project-card reverse">
+                    <div class="project-image">
+                        <img src="assets/athena.webp" alt="Expense Management Project">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Expense Management</h3>
+                        <p class="project-description">AI-Powered Expense Management System built for ease and accuracy. Streamline expense tracking with automated invoice processing, data extraction, and seamless workflow integration for perfect tax reporting.</p>
+                        <a href="expense.html" class="project-button">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>

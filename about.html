@@ -156,7 +156,7 @@
         }
 
         .projects-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -285,6 +285,20 @@
 
             .nav-links {
                 gap: 1.5rem;
+            }
+        }
+
+        /* Tablet screens: 2 columns */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Large tablets/small desktop: 3 columns */
+        @media (min-width: 1025px) and (max-width: 1400px) {
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
