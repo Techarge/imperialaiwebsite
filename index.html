@@ -246,8 +246,13 @@
             transform: translateX(5px);
         }
 
-            color: #b8b8b8;
-            line-height: 1.6;
+        color: #b8b8b8
+
+        ;
+        line-height:
+
+        1.6
+        ;
         }
 
         /* Contact Section */
@@ -448,7 +453,7 @@
             .hero-title {
                 font-size: 2.5rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 1.2rem;
             }
@@ -551,6 +556,7 @@
                 height: 280px;
             }
         }
+
         }
 
         /* Large tablets/small desktop: 3 columns */
@@ -559,487 +565,816 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
-    </style>
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <img src="assets/logo.png" alt="Imperial AI Logo">
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <section class="hero-section" id="home">
-        <svg class="neural-network"></svg>
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <img src="assets/logo.png" alt="Imperial AI Logo">
-            </h1>
-            <p class="hero-subtitle">Helping Businesses Maximize Growth and Cost Savings with AI-Powered Tools</p>
-            <button class="hero-button">Get Started</button>
-        </div>
-    </section>
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
 
-    <!-- Projects Section -->
-    <section class="projects-section" id="projects">
-        <div class="projects-container">
-            <h2 class="projects-title">Our Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1: Commodities Trading -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/commodities.webp" alt="Commodities Trading Platform">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Commodities Trading</h3>
-                        <p class="project-description">Transform commodities trading with AI-powered contract intelligence. Query quality specs, delivery clauses, or price terms from contracts through natural conversation. Our AI processes multiple email strings and filters the most recent relevant information.</p>
-                        <a href="commodities.html" class="project-button">Learn More</a>
-                    </div>
-                </div>
-
-                <!-- Project 2: GitHub Me (Reversed) -->
-                <div class="project-card reverse">
-                    <div class="project-image">
-                        <img src="assets/githubme.webp" alt="GitHub Me Project">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">GitHub Me</h3>
-                        <p class="project-description">Understand any codebase instantly. Save time and quickly learn how any GitHub Repo works—browse structure, see what it's built with, and chat with AI to explore code effortlessly. Perfect for developers and teams.</p>
-                        <a href="githubme.html" class="project-button">Learn More</a>
-                    </div>
-                </div>
-
-                <!-- Project 3: ReadA10K -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/read10k.webp" alt="ReadA10K Project">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">ReadA10K</h3>
-                        <p class="project-description">Skip the reading, keep the insights. Transform SEC filings into investment insights through AI-powered analysis of 10-K reports. Help investors quickly understand company fundamentals and make better decisions.</p>
-                        <a href="reada10k.html" class="project-button">Learn More</a>
-                    </div>
-                </div>
-
-                <!-- Project 4: Athena (Reversed) -->
-                <div class="project-card reverse">
-                    <div class="project-image">
-                        <img src="assets/athena.webp" alt="Athena Platform">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Athena</h3>
-                        <p class="project-description">Commodities Metals and Concentrates Contract Operations Platform designed to streamline operations, save time, reduce costs, and minimize errors. Build workflows and pricing spreadsheets with precision.</p>
-                        <a href="athena.html" class="project-button">Learn More</a>
-                    </div>
-                </div>
-
-                <!-- Project 5: Themis -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/themis.webp" alt="Themis Project">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Themis</h3>
-                        <p class="project-description">AI-Powered Legal Document Simplification for lawyers that transforms lengthy legal documents into digestible, easy-to-read summaries. Streamline your legal review process and focus on what matters most.</p>
-                        <a href="themis.html" class="project-button">Learn More</a>
-                    </div>
-                </div>
-
-                <!-- Project 6: AI Draw (Reversed) -->
-                <div class="project-card reverse">
-                    <div class="project-image">
-                        <img src="assets/aidraw.webp" alt="AI Draw Project">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">AI Draw</h3>
-                        <p class="project-description">A pioneering platform dedicated to transforming ordinary photos into extraordinary artwork using AI technology. Mainly focuses on turning your dog photos into stunning artistic masterpieces.</p>
-                        <a href="aidraw.html" class="project-button">Learn More</a>
-                    </div>
-                </div>
-
-                <!-- Project 7: CV Reader -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/cvreader.webp" alt="CV Reader Project">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">CV Reader</h3>
-                        <div class="project-stats">
-                            <div class="project-stat">
-                                <span class="stat-number">300</span>
-                                <span class="stat-label">CVs/month</span>
-                            </div>
-                            <div class="project-stat">
-                                <span class="stat-number">15hrs</span>
-                                <span class="stat-label">time saved</span>
-                            </div>
-                            <div class="project-stat">
-                                <span class="stat-number">£350</span>
-                                <span class="stat-label">cost savings</span>
-                            </div>
-                        </div>
-                        <p class="project-description">AI-Powered CV Reader that simplifies candidate comparison. Analyses 300 CVs a month, saving companies 15 hours and £350 for recruiting businesses through intelligent parsing and spreadsheet conversion.</p>
-                        <a href="cvreader.html" class="project-button">Learn More</a>
-                    </div>
-                </div>
-
-                <!-- Project 8: Expense Management (Reversed) -->
-                <div class="project-card reverse">
-                    <div class="project-image">
-                        <img src="assets/expense.webp" alt="Expense Management Project">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Expense Management</h3>
-                        <p class="project-description">AI-Powered Expense Management System built for ease and accuracy. Streamline expense tracking with automated invoice processing, data extraction, and seamless workflow integration for perfect tax reporting.</p>
-                        <a href="expense.html" class="project-button">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="contact-container">
-            <h2 class="contact-title">Get In Touch</h2>
-            <p class="contact-text">Ready to transform your business with AI? We'd love to hear from you. Contact us to discuss how our AI-powered solutions can help maximize your growth and reduce costs.</p>
-            <a href="contact.html" class="contact-button">Contact Us</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="assets/logo.png" alt="Imperial AI Logo">
-                        <span class="footer-logo-text">Imperial AI</span>
-                    </div>
-                    <p>Helping businesses maximize growth and cost savings with AI-powered tools. Transforming the future of business automation.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Our Products</h3>
-                    <a href="commodities.html">Commodities Trading</a>
-                    <a href="githubme.html">GitHub Me</a>
-                    <a href="reada10k.html">ReadA10K</a>
-                    <a href="athena.html">Athena</a>
-                    <a href="themis.html">Themis</a>
-                    <a href="aidraw.html">AI Draw</a>
-                    <a href="cvreader.html">CV Reader</a>
-                    <a href="expense.html">Expense Management</a>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <a href="about.html">About Us</a>
-                    <a href="#projects">Projects</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="#">Privacy Policy</a>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <p>Ready to get started?</p>
-                    <a href="contact.html">Get in touch with our team</a>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Imperial AI. All rights reserved. Developed by the Team at Imperial AI.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Neural Network Animation
-        class NeuralNetwork {
-            constructor() {
-                this.width = window.innerWidth;
-                this.height = window.innerHeight;
-                this.nodes = [];
-                this.connections = [];
-                this.mouseX = 0;
-                this.mouseY = 0;
-                this.repelRadius = 150;
-                this.repelStrength = 0.8;
-                
-                this.init();
-                this.setupEventListeners();
-                this.animate();
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
             }
 
-            init() {
-                console.log('Initializing neural network with dimensions:', this.width, 'x', this.height);
-                
-                // Create SVG
-                this.svg = d3.select('.neural-network')
-                    .attr('width', this.width)
-                    .attr('height', this.height);
-
-                console.log('SVG created:', this.svg.node());
-
-                // Create node data
-                this.createNodes();
-                console.log('Created', this.nodes.length, 'nodes');
-                
-                this.createConnections();
-                console.log('Created', this.connections.length, 'connections');
-                
-                // Render initial state
-                this.render();
-                console.log('Initial render complete');
+            .testimonials-section h2 {
+                font-size: 2.5rem !important;
+                margin-bottom: 2rem !important;
             }
 
-            createNodes() {
-                const nodeCount = Math.max(15, Math.floor((this.width * this.height) / 12000)); // Reduced nodes and increased divisor
-                console.log('Creating', nodeCount, 'nodes');
-                
-                // Extended bounds to include off-screen areas
-                const extendedWidth = this.width + 400; // 200px on each side
-                const extendedHeight = this.height + 400; // 200px on top and bottom
-                const offsetX = -200;
-                const offsetY = -200;
-                
-                for (let i = 0; i < nodeCount; i++) {
-                    this.nodes.push({
-                        id: i,
-                        x: Math.random() * extendedWidth + offsetX,
-                        y: Math.random() * extendedHeight + offsetY,
-                        originalX: 0,
-                        originalY: 0,
-                        vx: (Math.random() - 0.5) * 1.2,
-                        vy: (Math.random() - 0.5) * 1.2,
-                        radius: Math.random() * 3 + 2, // Much smaller nodes (2-5px)
-                        opacity: Math.random() * 0.4 + 0.6, // Higher opacity
-                        angle: Math.random() * Math.PI * 2,
-                        rotationSpeed: (Math.random() - 0.5) * 0.02,
-                        orbitRadius: Math.random() * 30 + 20,
-                        orbitSpeed: (Math.random() - 0.5) * 0.01
-                    });
-                }
-
-                // Set original positions
-                this.nodes.forEach(node => {
-                    node.originalX = node.x;
-                    node.originalY = node.y;
-                });
-            }
-
-            createConnections() {
-                const maxDistance = 180; // Increased connection distance
-                
-                // Connect each node to its nearest neighbors
-                for (let i = 0; i < this.nodes.length; i++) {
-                    const distances = [];
-                    
-                    for (let j = 0; j < this.nodes.length; j++) {
-                        if (i !== j) {
-                            const distance = this.getDistance(this.nodes[i], this.nodes[j]);
-                            distances.push({ index: j, distance: distance });
-                        }
-                    }
-                    
-                    // Sort by distance and connect to closest nodes
-                    distances.sort((a, b) => a.distance - b.distance);
-                    const connectionsPerNode = Math.min(3, distances.length); // Only 3 connections per node
-                    
-                    for (let k = 0; k < connectionsPerNode; k++) {
-                        const targetIndex = distances[k].index;
-                        const distance = distances[k].distance;
-                        
-                        if (distance < maxDistance) {
-                            // Check if connection already exists
-                            const exists = this.connections.some(conn => 
-                                (conn.source.id === i && conn.target.id === targetIndex) ||
-                                (conn.source.id === targetIndex && conn.target.id === i)
-                            );
-                            
-                            if (!exists) {
-                                this.connections.push({
-                                    source: this.nodes[i],
-                                    target: this.nodes[targetIndex],
-                                    opacity: (maxDistance - distance) / maxDistance * 0.6 // Higher opacity
-                                });
-                            }
-                        }
-                    }
-                }
-            }
-
-            render() {
-                // Render connections first (behind nodes)
-                const lines = this.svg.selectAll('.connection')
-                    .data(this.connections);
-
-                lines.enter()
-                    .append('line')
-                    .attr('class', 'connection')
-                    .merge(lines)
-                    .attr('x1', d => d.source.x)
-                    .attr('y1', d => d.source.y)
-                    .attr('x2', d => d.target.x)
-                    .attr('y2', d => d.target.y)
-                    .attr('opacity', d => d.opacity)
-                    .style('stroke', 'rgba(255, 255, 255, 0.5)') // Changed to white
-                    .style('stroke-width', '3px');
-
-                // Render nodes on top
-                const circles = this.svg.selectAll('.node')
-                    .data(this.nodes);
-
-                circles.enter()
-                    .append('circle')
-                    .attr('class', 'node')
-                    .merge(circles)
-                    .attr('cx', d => d.x)
-                    .attr('cy', d => d.y)
-                    .attr('r', d => d.radius)
-                    .attr('opacity', d => d.opacity)
-                    .style('fill', 'rgba(255, 255, 255, 0.9)')
-                    .style('stroke', 'rgba(255, 255, 255, 0.6)')
-                    .style('stroke-width', '2px');
-            }
-
-            updateNodes() {
-                this.nodes.forEach(node => {
-                    // Update rotation angle
-                    node.angle += node.rotationSpeed;
-                    
-                    // Orbital movement
-                    const orbitX = Math.cos(node.angle) * node.orbitRadius * 0.3;
-                    const orbitY = Math.sin(node.angle) * node.orbitRadius * 0.3;
-                    
-                    // Natural movement with orbital influence
-                    node.x += node.vx + orbitX * 0.01;
-                    node.y += node.vy + orbitY * 0.01;
-
-                    // Add continuous subtle movement
-                    node.vx += Math.sin(node.angle * 0.5) * 0.005;
-                    node.vy += Math.cos(node.angle * 0.3) * 0.005;
-
-                    // Boundary wrapping with extended bounds
-                    const extendedBoundary = 200;
-                    if (node.x < -extendedBoundary) node.x = this.width + extendedBoundary;
-                    if (node.x > this.width + extendedBoundary) node.x = -extendedBoundary;
-                    if (node.y < -extendedBoundary) node.y = this.height + extendedBoundary;
-                    if (node.y > this.height + extendedBoundary) node.y = -extendedBoundary;
-
-                    // Mouse repulsion
-                    const distanceToMouse = Math.sqrt(
-                        Math.pow(node.x - this.mouseX, 2) + 
-                        Math.pow(node.y - this.mouseY, 2)
-                    );
-
-                    if (distanceToMouse < this.repelRadius) {
-                        const angle = Math.atan2(node.y - this.mouseY, node.x - this.mouseX);
-                        const force = (this.repelRadius - distanceToMouse) / this.repelRadius * this.repelStrength;
-                        
-                        node.vx += Math.cos(angle) * force;
-                        node.vy += Math.sin(angle) * force;
-                        
-                        // Increase rotation when repelled
-                        node.rotationSpeed += (Math.random() - 0.5) * 0.01;
-                    }
-
-                    // Gentle damping
-                    node.vx *= 0.995;
-                    node.vy *= 0.995;
-                    
-                    // Normalize rotation speed
-                    node.rotationSpeed *= 0.98;
-                    if (Math.abs(node.rotationSpeed) < 0.005) {
-                        node.rotationSpeed = (Math.random() - 0.5) * 0.01;
-                    }
-
-                    // Add some randomness
-                    node.vx += (Math.random() - 0.5) * 0.02;
-                    node.vy += (Math.random() - 0.5) * 0.02;
-
-                    // Limit velocity
-                    const maxVel = 3;
-                    const vel = Math.sqrt(node.vx * node.vx + node.vy * node.vy);
-                    if (vel > maxVel) {
-                        node.vx = (node.vx / vel) * maxVel;
-                        node.vy = (node.vy / vel) * maxVel;
-                    }
-
-                    // Pulsing opacity with higher base values
-                    node.opacity = 0.6 + Math.sin(node.angle * 2) * 0.2 + 0.2;
-                });
-            }
-
-            updateConnections() {
-                const maxDistance = 180;
-                
-                this.connections.forEach(connection => {
-                    const distance = this.getDistance(connection.source, connection.target);
-                    const baseOpacity = distance < maxDistance ? 
-                        (maxDistance - distance) / maxDistance * 0.6 : 0; // Higher base opacity
-                    
-                    // Add pulsing effect to connections
-                    const pulse = Math.sin(Date.now() * 0.001 + connection.source.id * 0.1) * 0.15;
-                    connection.opacity = Math.max(0.1, baseOpacity + pulse); // Minimum opacity of 0.1
-                });
-            }
-
-            getDistance(node1, node2) {
-                return Math.sqrt(
-                    Math.pow(node1.x - node2.x, 2) + 
-                    Math.pow(node1.y - node2.y, 2)
-                );
-            }
-
-            animate() {
-                this.updateNodes();
-                this.updateConnections();
-                this.render();
-                requestAnimationFrame(() => this.animate());
-            }
-
-            setupEventListeners() {
-                // Mouse movement
-                document.addEventListener('mousemove', (e) => {
-                    this.mouseX = e.clientX;
-                    this.mouseY = e.clientY;
-                });
-
-                // Window resize
-                window.addEventListener('resize', () => {
-                    this.width = window.innerWidth;
-                    this.height = window.innerHeight;
-                    
-                    this.svg
-                        .attr('width', this.width)
-                        .attr('height', this.height);
-                });
+            .testimonial-card {
+                padding: 1.5rem !important;
             }
         }
 
-        // Initialize the neural network when the page loads
+        @media (max-width: 480px) {
+            .testimonials-section {
+                padding: 3rem 1rem !important;
+            }
+
+            .testimonials-section h2 {
+                font-size: 2rem !important;
+            }
+        }
+
+.industries-section div:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: #667eea;
+}
+
+        /* Industries Section Styles */
+        .industries-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(to bottom, #000000 0%, #667eea 100%);
+            position: relative;
+            z-index: 3;
+        }
+
+        .industries-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .industries-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .industries-subtitle {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 1.2rem;
+            color: #b8b8b8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .industry-block {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .industry-block:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #667eea;
+        }
+
+        .industry-icon {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .industry-icon img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .industry-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .industry-description {
+            color: #b8b8b8;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .industries-title {
+                font-size: 2.5rem;
+            }
+            
+            .industries-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#home" class="nav-logo">
+            <img src="assets/logo.png" alt="Imperial AI Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero-section" id="home">
+    <svg class="neural-network"></svg>
+    <div class="hero-content">
+        <h1 class="hero-title">
+            <img src="assets/logo.png" alt="Imperial AI Logo">
+        </h1>
+        <p class="hero-subtitle">Helping Businesses Maximize Growth and Cost Savings with AI-Powered Tools</p>
+        <button class="hero-button">Get Started</button>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects-section" id="projects">
+    <div class="projects-container">
+        <h2 class="projects-title">Our Projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1: Commodities Trading -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/commodities.webp" alt="Commodities Trading Platform">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Commodities Trading</h3>
+                    <p class="project-description">Transform commodities trading with AI-powered contract intelligence.
+                        Query quality specs, delivery clauses, or price terms from contracts through natural
+                        conversation. Our AI processes multiple email strings and filters the most recent relevant
+                        information.</p>
+                    <a href="commodities.html" class="project-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Project 2: GitHub Me (Reversed) -->
+            <div class="project-card reverse">
+                <div class="project-image">
+                    <img src="assets/githubme.webp" alt="GitHub Me Project">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">GitHub Me</h3>
+                    <p class="project-description">Understand any codebase instantly. Save time and quickly learn how
+                        any GitHub Repo works—browse structure, see what it's built with, and chat with AI to explore
+                        code effortlessly. Perfect for developers and teams.</p>
+                    <a href="githubme.html" class="project-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Project 3: ReadA10K -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/read10k.webp" alt="ReadA10K Project">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">ReadA10K</h3>
+                    <p class="project-description">Skip the reading, keep the insights. Transform SEC filings into
+                        investment insights through AI-powered analysis of 10-K reports. Help investors quickly
+                        understand company fundamentals and make better decisions.</p>
+                    <a href="reada10k.html" class="project-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Project 4: Athena (Reversed) -->
+            <div class="project-card reverse">
+                <div class="project-image">
+                    <img src="assets/athena.webp" alt="Athena Platform">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Athena</h3>
+                    <p class="project-description">Commodities Metals and Concentrates Contract Operations Platform
+                        designed to streamline operations, save time, reduce costs, and minimize errors. Build workflows
+                        and pricing spreadsheets with precision.</p>
+                    <a href="athena.html" class="project-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Project 5: Themis -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/themis.webp" alt="Themis Project">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Themis</h3>
+                    <p class="project-description">AI-Powered Legal Document Simplification for lawyers that transforms
+                        lengthy legal documents into digestible, easy-to-read summaries. Streamline your legal review
+                        process and focus on what matters most.</p>
+                    <a href="themis.html" class="project-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Project 6: AI Draw (Reversed) -->
+            <div class="project-card reverse">
+                <div class="project-image">
+                    <img src="assets/aidraw.webp" alt="AI Draw Project">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">AI Draw</h3>
+                    <p class="project-description">A pioneering platform dedicated to transforming ordinary photos into
+                        extraordinary artwork using AI technology. Mainly focuses on turning your dog photos into
+                        stunning artistic masterpieces.</p>
+                    <a href="aidraw.html" class="project-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Project 7: CV Reader -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/cvreader.webp" alt="CV Reader Project">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">CV Reader</h3>
+                    <div class="project-stats">
+                        <div class="project-stat">
+                            <span class="stat-number">300</span>
+                            <span class="stat-label">CVs/month</span>
+                        </div>
+                        <div class="project-stat">
+                            <span class="stat-number">15hrs</span>
+                            <span class="stat-label">time saved</span>
+                        </div>
+                        <div class="project-stat">
+                            <span class="stat-number">£350</span>
+                            <span class="stat-label">cost savings</span>
+                        </div>
+                    </div>
+                    <p class="project-description">AI-Powered CV Reader that simplifies candidate comparison. Analyses
+                        300 CVs a month, saving companies 15 hours and £350 for recruiting businesses through
+                        intelligent parsing and spreadsheet conversion.</p>
+                    <a href="cvreader.html" class="project-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Project 8: Expense Management (Reversed) -->
+            <div class="project-card reverse">
+                <div class="project-image">
+                    <img src="assets/expense.webp" alt="Expense Management Project">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Expense Management</h3>
+                    <p class="project-description">AI-Powered Expense Management System built for ease and accuracy.
+                        Streamline expense tracking with automated invoice processing, data extraction, and seamless
+                        workflow integration for perfect tax reporting.</p>
+                    <a href="expense.html" class="project-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Testimonials Section -->
+<section class="testimonials-section" style="padding: 5rem 2rem; background: #0a0a0a; position: relative; z-index: 3;">
+    <div class="testimonials-container" style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="text-align: center; margin-bottom: 3rem; font-size: 3rem; font-weight: 700; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            What Our Users Say
+        </h2>
+
+        <div class="testimonials-grid"
+             style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+
+            <!-- Testimonial 1 - Nick -->
+            <div class="testimonial-card"
+                 style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; transition: all 0.3s ease; backdrop-filter: blur(10px); border-left: 4px solid #667eea;">
+                <div class="testimonial-content" style="margin-bottom: 1.5rem;">
+                    <p style="font-size: 1.1rem; line-height: 1.6; color: #b8b8b8; margin: 0; font-style: italic;">
+                        "This platform has saved me 15 hours every month in our recruitment business. The automation
+                        tools are incredible and the CV parsing feature alone has transformed how we handle
+                        applications."
+                    </p>
+                </div>
+                <div class="testimonial-author" style="display: flex; align-items: center;">
+                    <div class="author-avatar"
+                         style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem; margin-right: 1rem;">
+                        N
+                    </div>
+                    <div class="author-info">
+                        <div class="author-name" style="font-weight: 600; color: white; font-size: 1rem;">Nick</div>
+                        <div class="author-title" style="color: #b8b8b8; font-size: 0.9rem;">Recruitment Business
+                            Owner
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card"
+                 style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; transition: all 0.3s ease; backdrop-filter: blur(10px); border-left: 4px solid #764ba2;">
+                <div class="testimonial-content" style="margin-bottom: 1.5rem;">
+                    <p style="font-size: 1.1rem; line-height: 1.6; color: #b8b8b8; margin: 0; font-style: italic;">
+                        "The AI-powered tools have streamlined our entire workflow. What used to take hours now takes
+                        minutes. Highly recommend to any business looking to scale efficiently."
+                    </p>
+                </div>
+                <div class="testimonial-author" style="display: flex; align-items: center;">
+                    <div class="author-avatar"
+                         style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem; margin-right: 1rem;">
+                        S
+                    </div>
+                    <div class="author-info">
+                        <div class="author-name" style="font-weight: 600; color: white; font-size: 1rem;">Sarah</div>
+                        <div class="author-title" style="color: #b8b8b8; font-size: 0.9rem;">Operations Manager</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card"
+                 style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; transition: all 0.3s ease; backdrop-filter: blur(10px); border-left: 4px solid #8b5cf6;">
+                <div class="testimonial-content" style="margin-bottom: 1.5rem;">
+                    <p style="font-size: 1.1rem; line-height: 1.6; color: #b8b8b8; margin: 0; font-style: italic;">
+                        "Incredible suite of tools! The document analysis and expense tracking features have
+                        revolutionized how we handle our business processes. Five stars!"
+                    </p>
+                </div>
+                <div class="testimonial-author" style="display: flex; align-items: center;">
+                    <div class="author-avatar"
+                         style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #8b5cf6 0%, #667eea 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem; margin-right: 1rem;">
+                        M
+                    </div>
+                    <div class="author-info">
+                        <div class="author-name" style="font-weight: 600; color: white; font-size: 1rem;">Michael</div>
+                        <div class="author-title" style="color: #b8b8b8; font-size: 0.9rem;">Small Business Owner</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Call to Action -->
+        <div style="text-align: center;">
+            <p style="font-size: 1.1rem; color: #b8b8b8; margin-bottom: 2rem; line-height: 1.6;">
+                Join thousands of satisfied users who are saving time and increasing productivity
+            </p>
+            <a href="#contact"
+               style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 25px; font-weight: 600; font-size: 1.1rem; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+               onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(102, 126, 234, 0.4)'"
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                Get Started Today
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Industries Section -->
+<section class="industries-section"
+         style="padding: 5rem 2rem; background: linear-gradient(135deg, #000000 0%, #667eea 100%); position: relative; z-index: 3;">
+    <div class="industries-container" style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="text-align: center; margin-bottom: 2rem; font-size: 3rem; font-weight: 700; color: white;">
+            Industries We Serve
+        </h2>
+        <p style="text-align: center; margin-bottom: 4rem; font-size: 1.2rem; color: #b8b8b8; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Our AI-powered solutions are transforming businesses across multiple sectors
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+
+            <!-- Recruitment -->
+            <div class="industry-block" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 2rem; text-align: center; transition: all 0.3s ease;">
+                <div style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                    <img src="" alt="Recruitment Icon" style="width: 60px; height: 60px; object-fit: contain;">
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: 1rem;">Recruitment</h3>
+                <p style="color: #b8b8b8; line-height: 1.6;">CV parsing, candidate analysis, and automated screening
+                    processes</p>
+            </div>
+
+            <!-- Legal -->
+            <div class="industry-block" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 2rem; text-align: center; transition: all 0.3s ease;">
+                <div style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                    <img src="" alt="Legal Icon" style="width: 60px; height: 60px; object-fit: contain;">
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: 1rem;">Legal Services</h3>
+                <p style="color: #b8b8b8; line-height: 1.6;">Document simplification, contract analysis, and legal
+                    research automation</p>
+            </div>
+
+            <!-- Trading -->
+            <div class="industry-block" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 2rem; text-align: center; transition: all 0.3s ease;">
+                <div style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                    <img src="" alt="Trading Icon" style="width: 60px; height: 60px; object-fit: contain;">
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: 1rem;">Trading &
+                    Finance</h3>
+                <p style="color: #b8b8b8; line-height: 1.6;">Commodities analysis, contract intelligence, and financial
+                    document processing</p>
+            </div>
+
+            <!-- Tech -->
+            <div class="industry-block" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 2rem; text-align: center; transition: all 0.3s ease;">
+                <div style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                    <img src="" alt="Technology Icon" style="width: 60px; height: 60px; object-fit: contain;">
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: 1rem;">Technology</h3>
+                <p style="color: #b8b8b8; line-height: 1.6;">Code analysis, repository understanding, and development
+                    workflow optimization</p>
+            </div>
+
+            <!-- Small Business -->
+            <div class="industry-block" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 2rem; text-align: center; transition: all 0.3s ease;">
+                <div style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                    <img src="" alt="Small Business Icon" style="width: 60px; height: 60px; object-fit: contain;">
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: 1rem;">Small Business</h3>
+                <p style="color: #b8b8b8; line-height: 1.6;">Expense management, document processing, and operational
+                    automation</p>
+            </div>
+
+            <!-- Investment -->
+            <div class="industry-block" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 2rem; text-align: center; transition: all 0.3s ease;">
+                <div style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                    <img src="" alt="Investment Icon" style="width: 60px; height: 60px; object-fit: contain;">
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: 1rem;">Investment</h3>
+                <p style="color: #b8b8b8; line-height: 1.6;">SEC filing analysis, investment research, and financial
+                    report processing</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+    <div class="contact-container">
+        <h2 class="contact-title">Get In Touch</h2>
+        <p class="contact-text">Ready to transform your business with AI? We'd love to hear from you. Contact us to
+            discuss how our AI-powered solutions can help maximize your growth and reduce costs.</p>
+        <a href="contact.html" class="contact-button">Contact Us</a>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="assets/logo.png" alt="Imperial AI Logo">
+                    <span class="footer-logo-text">Imperial AI</span>
+                </div>
+                <p>Helping businesses maximize growth and cost savings with AI-powered tools. Transforming the future of
+                    business automation.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Our Products</h3>
+                <a href="commodities.html">Commodities Trading</a>
+                <a href="githubme.html">GitHub Me</a>
+                <a href="reada10k.html">ReadA10K</a>
+                <a href="athena.html">Athena</a>
+                <a href="themis.html">Themis</a>
+                <a href="aidraw.html">AI Draw</a>
+                <a href="cvreader.html">CV Reader</a>
+                <a href="expense.html">Expense Management</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="about.html">About Us</a>
+                <a href="#projects">Projects</a>
+                <a href="contact.html">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <p>Ready to get started?</p>
+                <a href="contact.html">Get in touch with our team</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Imperial AI. All rights reserved. Developed by the Team at Imperial AI.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Neural Network Animation
+    class NeuralNetwork {
+        constructor() {
+            this.width = window.innerWidth;
+            this.height = window.innerHeight;
+            this.nodes = [];
+            this.connections = [];
+            this.mouseX = 0;
+            this.mouseY = 0;
+            this.repelRadius = 150;
+            this.repelStrength = 0.8;
+
+            this.init();
+            this.setupEventListeners();
+            this.animate();
+        }
+
+        init() {
+            console.log('Initializing neural network with dimensions:', this.width, 'x', this.height);
+
+            // Create SVG
+            this.svg = d3.select('.neural-network')
+                .attr('width', this.width)
+                .attr('height', this.height);
+
+            console.log('SVG created:', this.svg.node());
+
+            // Create node data
+            this.createNodes();
+            console.log('Created', this.nodes.length, 'nodes');
+
+            this.createConnections();
+            console.log('Created', this.connections.length, 'connections');
+
+            // Render initial state
+            this.render();
+            console.log('Initial render complete');
+        }
+
+        createNodes() {
+            const nodeCount = Math.max(15, Math.floor((this.width * this.height) / 12000)); // Reduced nodes and increased divisor
+            console.log('Creating', nodeCount, 'nodes');
+
+            // Extended bounds to include off-screen areas
+            const extendedWidth = this.width + 400; // 200px on each side
+            const extendedHeight = this.height + 400; // 200px on top and bottom
+            const offsetX = -200;
+            const offsetY = -200;
+
+            for (let i = 0; i < nodeCount; i++) {
+                this.nodes.push({
+                    id: i,
+                    x: Math.random() * extendedWidth + offsetX,
+                    y: Math.random() * extendedHeight + offsetY,
+                    originalX: 0,
+                    originalY: 0,
+                    vx: (Math.random() - 0.5) * 1.2,
+                    vy: (Math.random() - 0.5) * 1.2,
+                    radius: Math.random() * 3 + 2, // Much smaller nodes (2-5px)
+                    opacity: Math.random() * 0.4 + 0.6, // Higher opacity
+                    angle: Math.random() * Math.PI * 2,
+                    rotationSpeed: (Math.random() - 0.5) * 0.02,
+                    orbitRadius: Math.random() * 30 + 20,
+                    orbitSpeed: (Math.random() - 0.5) * 0.01
+                });
+            }
+
+            // Set original positions
+            this.nodes.forEach(node => {
+                node.originalX = node.x;
+                node.originalY = node.y;
+            });
+        }
+
+        createConnections() {
+            const maxDistance = 180; // Increased connection distance
+
+            // Connect each node to its nearest neighbors
+            for (let i = 0; i < this.nodes.length; i++) {
+                const distances = [];
+
+                for (let j = 0; j < this.nodes.length; j++) {
+                    if (i !== j) {
+                        const distance = this.getDistance(this.nodes[i], this.nodes[j]);
+                        distances.push({index: j, distance: distance});
+                    }
+                }
+
+                // Sort by distance and connect to closest nodes
+                distances.sort((a, b) => a.distance - b.distance);
+                const connectionsPerNode = Math.min(3, distances.length); // Only 3 connections per node
+
+                for (let k = 0; k < connectionsPerNode; k++) {
+                    const targetIndex = distances[k].index;
+                    const distance = distances[k].distance;
+
+                    if (distance < maxDistance) {
+                        // Check if connection already exists
+                        const exists = this.connections.some(conn =>
+                            (conn.source.id === i && conn.target.id === targetIndex) ||
+                            (conn.source.id === targetIndex && conn.target.id === i)
+                        );
+
+                        if (!exists) {
+                            this.connections.push({
+                                source: this.nodes[i],
+                                target: this.nodes[targetIndex],
+                                opacity: (maxDistance - distance) / maxDistance * 0.6 // Higher opacity
+                            });
+                        }
+                    }
+                }
+            }
+        }
+
+        render() {
+            // Render connections first (behind nodes)
+            const lines = this.svg.selectAll('.connection')
+                .data(this.connections);
+
+            lines.enter()
+                .append('line')
+                .attr('class', 'connection')
+                .merge(lines)
+                .attr('x1', d => d.source.x)
+                .attr('y1', d => d.source.y)
+                .attr('x2', d => d.target.x)
+                .attr('y2', d => d.target.y)
+                .attr('opacity', d => d.opacity)
+                .style('stroke', 'rgba(255, 255, 255, 0.5)') // Changed to white
+                .style('stroke-width', '3px');
+
+            // Render nodes on top
+            const circles = this.svg.selectAll('.node')
+                .data(this.nodes);
+
+            circles.enter()
+                .append('circle')
+                .attr('class', 'node')
+                .merge(circles)
+                .attr('cx', d => d.x)
+                .attr('cy', d => d.y)
+                .attr('r', d => d.radius)
+                .attr('opacity', d => d.opacity)
+                .style('fill', 'rgba(255, 255, 255, 0.9)')
+                .style('stroke', 'rgba(255, 255, 255, 0.6)')
+                .style('stroke-width', '2px');
+        }
+
+        updateNodes() {
+            this.nodes.forEach(node => {
+                // Update rotation angle
+                node.angle += node.rotationSpeed;
+
+                // Orbital movement
+                const orbitX = Math.cos(node.angle) * node.orbitRadius * 0.3;
+                const orbitY = Math.sin(node.angle) * node.orbitRadius * 0.3;
+
+                // Natural movement with orbital influence
+                node.x += node.vx + orbitX * 0.01;
+                node.y += node.vy + orbitY * 0.01;
+
+                // Add continuous subtle movement
+                node.vx += Math.sin(node.angle * 0.5) * 0.005;
+                node.vy += Math.cos(node.angle * 0.3) * 0.005;
+
+                // Boundary wrapping with extended bounds
+                const extendedBoundary = 200;
+                if (node.x < -extendedBoundary) node.x = this.width + extendedBoundary;
+                if (node.x > this.width + extendedBoundary) node.x = -extendedBoundary;
+                if (node.y < -extendedBoundary) node.y = this.height + extendedBoundary;
+                if (node.y > this.height + extendedBoundary) node.y = -extendedBoundary;
+
+                // Mouse repulsion
+                const distanceToMouse = Math.sqrt(
+                    Math.pow(node.x - this.mouseX, 2) +
+                    Math.pow(node.y - this.mouseY, 2)
+                );
+
+                if (distanceToMouse < this.repelRadius) {
+                    const angle = Math.atan2(node.y - this.mouseY, node.x - this.mouseX);
+                    const force = (this.repelRadius - distanceToMouse) / this.repelRadius * this.repelStrength;
+
+                    node.vx += Math.cos(angle) * force;
+                    node.vy += Math.sin(angle) * force;
+
+                    // Increase rotation when repelled
+                    node.rotationSpeed += (Math.random() - 0.5) * 0.01;
+                }
+
+                // Gentle damping
+                node.vx *= 0.995;
+                node.vy *= 0.995;
+
+                // Normalize rotation speed
+                node.rotationSpeed *= 0.98;
+                if (Math.abs(node.rotationSpeed) < 0.005) {
+                    node.rotationSpeed = (Math.random() - 0.5) * 0.01;
+                }
+
+                // Add some randomness
+                node.vx += (Math.random() - 0.5) * 0.02;
+                node.vy += (Math.random() - 0.5) * 0.02;
+
+                // Limit velocity
+                const maxVel = 3;
+                const vel = Math.sqrt(node.vx * node.vx + node.vy * node.vy);
+                if (vel > maxVel) {
+                    node.vx = (node.vx / vel) * maxVel;
+                    node.vy = (node.vy / vel) * maxVel;
+                }
+
+                // Pulsing opacity with higher base values
+                node.opacity = 0.6 + Math.sin(node.angle * 2) * 0.2 + 0.2;
+            });
+        }
+
+        updateConnections() {
+            const maxDistance = 180;
+
+            this.connections.forEach(connection => {
+                const distance = this.getDistance(connection.source, connection.target);
+                const baseOpacity = distance < maxDistance ?
+                    (maxDistance - distance) / maxDistance * 0.6 : 0; // Higher base opacity
+
+                // Add pulsing effect to connections
+                const pulse = Math.sin(Date.now() * 0.001 + connection.source.id * 0.1) * 0.15;
+                connection.opacity = Math.max(0.1, baseOpacity + pulse); // Minimum opacity of 0.1
+            });
+        }
+
+        getDistance(node1, node2) {
+            return Math.sqrt(
+                Math.pow(node1.x - node2.x, 2) +
+                Math.pow(node1.y - node2.y, 2)
+            );
+        }
+
+        animate() {
+            this.updateNodes();
+            this.updateConnections();
+            this.render();
+            requestAnimationFrame(() => this.animate());
+        }
+
+        setupEventListeners() {
+            // Mouse movement
+            document.addEventListener('mousemove', (e) => {
+                this.mouseX = e.clientX;
+                this.mouseY = e.clientY;
+            });
+
+            // Window resize
+            window.addEventListener('resize', () => {
+                this.width = window.innerWidth;
+                this.height = window.innerHeight;
+
+                this.svg
+                    .attr('width', this.width)
+                    .attr('height', this.height);
+            });
+        }
+    }
+
+    // Initialize the neural network when the page loads
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOM loaded, initializing neural network...');
+        new NeuralNetwork();
+    });
+
+    // Backup initialization in case DOMContentLoaded already fired
+    if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
             console.log('DOM loaded, initializing neural network...');
             new NeuralNetwork();
         });
-
-        // Backup initialization in case DOMContentLoaded already fired
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => {
-                console.log('DOM loaded, initializing neural network...');
-                new NeuralNetwork();
-            });
-        } else {
-            console.log('DOM already loaded, initializing neural network immediately...');
-            new NeuralNetwork();
-        }
-    </script>
+    } else {
+        console.log('DOM already loaded, initializing neural network immediately...');
+        new NeuralNetwork();
+    }
+</script>
 </body>
 </html>
