@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Allow all pages to be crawled
+Allow: /index.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /commodities.html
+Allow: /githubme.html
+Allow: /reada10k.html
+Allow: /athena.html
+Allow: /cvreader.html
+Allow: /expense.html
+Allow: /aidraw.html
+Allow: /themis.html
+
+# Allow assets folder for images and resources
+Allow: /assets/
+
+# Disallow any admin or private directories (if they exist)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /.idea/
+
+# Sitemap location (update with your actual domain)
+Sitemap: https://imperialai.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1
