@@ -116,7 +116,25 @@
             font-size: 1.5rem;
             color: #b8b8b8;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-contact-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .hero-contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
 
         .contact-content {
@@ -193,6 +211,11 @@
                 font-size: 1.2rem;
             }
 
+            .hero-contact-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
             .contact-info {
                 padding: 2rem;
             }
@@ -234,6 +257,7 @@
             Contact Us
         </h1>
         <p class="contact-hero-subtitle">Ready to transform your business with AI? Let's discuss how our solutions can help you maximize growth and reduce costs.</p>
+        <a href="mailto:contact@imperialai.com" class="hero-contact-button">Get in Touch Now</a>
     </section>
 
     <div class="contact-content">
