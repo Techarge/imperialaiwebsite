@@ -636,6 +636,26 @@
             color: #667eea;
         }
 
+        .footer-contact-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white !important;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .footer-contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            color: white !important;
+        }
+
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 1rem;
@@ -741,6 +761,22 @@
             .footer-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+            }
+
+            .footer-section:nth-child(4) {
+                order: 1;
+            }
+
+            .footer-section:nth-child(1) {
+                order: 2;
+            }
+
+            .footer-section:nth-child(2) {
+                order: 3;
+            }
+
+            .footer-section:nth-child(3) {
+                order: 4;
             }
 
             .contact-title {
@@ -1157,7 +1193,7 @@
             <div class="footer-section">
                 <h3>Connect</h3>
                 <p>Ready to get started?</p>
-                <a href="contact.html">Get in touch with our team</a>
+                <a href="contact.html" class="footer-contact-button">Get in touch with our team</a>
             </div>
         </div>
 
