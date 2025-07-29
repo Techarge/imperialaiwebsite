@@ -205,7 +205,6 @@
 
         .project-image {
             width: 100%;
-            height: 200px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             margin-bottom: 1.5rem;
@@ -284,6 +283,11 @@
                 font-size: 2.5rem;
             }
 
+            .project-image img {
+                object-fit: contain !important;
+                background: rgba(255, 255, 255, 0.02);
+            }
+
             .navbar {
                 padding: 1rem;
             }
@@ -316,14 +320,14 @@
 <body>
     <nav class="navbar">
     <div class="nav-container">
-        <a href="#home" class="nav-logo">
+        <a href="index.html" class="nav-logo">
             <img src="assets/logo.png" alt="Imperial AI Logo">
         </a>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
+            <li><a href="index.html#home">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
 </nav>
